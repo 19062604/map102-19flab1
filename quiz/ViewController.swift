@@ -9,7 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var questionlabel: UILabel!
+   @IBOutlet var answerlabel: UILabel!
+    @IBAction func showNextQuestion(_ sender: UIButton){
 
+        currentQuestionIndex += 1
+        if currentQuestionIndex == questions.count{
+            currentQuestionIndex = 0
+   }
+       let question: String = questions[currentQuestionIndex]
+        questionlabel.text = question
+       answerlabel.text = "???"
+    }
+    @IBAction func showAnswer(_ sender: UIButton){
+        let answer: String  = answer[currentQuestionIndex]
+    answerlabel. text = answer
+        }
+     let  questions: [String] = [
+    "What is 7+7",
+    "what is the capital of vermont?",
+    "What is cognac made from?"
+    ]
+    let  answers : [String] = [
+    "14",
+    "montpelier",
+    "grapes"
+    ]
+    var currentQuestionIndex: Int = 0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
