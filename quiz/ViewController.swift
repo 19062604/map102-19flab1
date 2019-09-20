@@ -22,8 +22,8 @@ class ViewController: UIViewController {
        answerlabel.text = "???"
     }
     @IBAction func showAnswer(_ sender: UIButton){
-        let answer: String  = answer[currentQuestionIndex]
-    answerlabel. text = answer
+        let answer: String = answers[currentQuestionIndex]
+    answerlabel.text = answer
         }
      let  questions: [String] = [
     "What is 7+7",
